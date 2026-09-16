@@ -17,24 +17,18 @@ import StatCard from "./components/StatCard";
 import StudentDirectory from "./components/StudentDirectory";
 import StudentForm from "./components/StudentForm";
 
-const API_URL = "http://localhost:5000/api/students";
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000/api/students";
 
 function App() {
   const [showStudentForm, setShowStudentForm] = useState(false);
-
   const [students, setStudents] = useState([]);
-
   const [editingStudent, setEditingStudent] = useState(null);
-
   const [topSearch, setTopSearch] = useState("");
-
   const [loading, setLoading] = useState(true);
-
   const [error, setError] = useState("");
 
-  // -----------------------------------------
-  // LOAD STUDENTS FROM BACKEND
-  // -----------------------------------------
   useEffect(() => {
     fetchStudents();
   }, []);
@@ -46,7 +40,6 @@ function App() {
       const response = await axios.get(API_URL);
 
       setStudents(response.data);
-
       setError("");
     } catch (err) {
       console.error("Failed to load students:", err);
@@ -59,9 +52,6 @@ function App() {
     }
   };
 
-  // -----------------------------------------
-  // ADD STUDENT
-  // -----------------------------------------
   const handleStudentAdded = (student) => {
     setStudents((currentStudents) => [
       ...currentStudents,
@@ -71,9 +61,6 @@ function App() {
     setError("");
   };
 
-  // -----------------------------------------
-  // DELETE STUDENT
-  // -----------------------------------------
   const handleStudentDeleted = async (id) => {
     try {
       await axios.delete(`${API_URL}/${id}`);
@@ -90,22 +77,15 @@ function App() {
       setError("");
     } catch (err) {
       console.error("Delete failed:", err);
-
       setError("Unable to delete the student.");
     }
   };
 
-  // -----------------------------------------
-  // OPEN EDIT FORM
-  // -----------------------------------------
   const handleEditStudent = (student) => {
     setEditingStudent(student);
     setShowStudentForm(true);
   };
 
-  // -----------------------------------------
-  // UPDATE STUDENT
-  // -----------------------------------------
   const handleStudentUpdated = (updatedStudent) => {
     setStudents((currentStudents) =>
       currentStudents.map((student) => {
@@ -129,19 +109,12 @@ function App() {
     setError("");
   };
 
-  // -----------------------------------------
-  // CLOSE FORM
-  // -----------------------------------------
   const handleCloseForm = () => {
     setShowStudentForm(false);
     setEditingStudent(null);
   };
 
-  // -----------------------------------------
-  // DASHBOARD STATISTICS
-  // -----------------------------------------
   const totalStudents = students.length;
-
   const activeStudents = students.length;
 
   const courses = new Set(
@@ -152,9 +125,6 @@ function App() {
 
   const newThisMonth = students.length;
 
-  // -----------------------------------------
-  // CURRENT DATE
-  // -----------------------------------------
   const currentDate = new Date();
 
   const formattedDate =
@@ -165,9 +135,6 @@ function App() {
       year: "numeric",
     });
 
-  // -----------------------------------------
-  // TOP SEARCH
-  // -----------------------------------------
   const handleTopSearch = (e) => {
     setTopSearch(e.target.value);
   };
@@ -177,12 +144,7 @@ function App() {
       <Sidebar />
 
       <div className="main-content">
-
-        {/* =====================================
-            TOP BAR
-        ===================================== */}
         <header className="topbar">
-
           <div className="top-search">
             <Search size={20} />
 
@@ -200,7 +162,6 @@ function App() {
           </div>
 
           <div className="topbar-right">
-
             <button className="notification-btn">
               <Bell size={20} />
               <span className="notification-dot"></span>
@@ -214,32 +175,15 @@ function App() {
             </div>
 
             <div className="profile-section">
-
-              <div className="profile-avatar">
-                K
-              </div>
-
+              <div className="profile-avatar">K</div>
               <ChevronDown size={17} />
-
             </div>
-
           </div>
-
         </header>
 
-
-        {/* =====================================
-            MAIN DASHBOARD
-        ===================================== */}
         <main className="dashboard-content">
-
-          {/* ===================================
-              WELCOME SECTION
-          =================================== */}
           <section className="welcome-section">
-
             <div className="welcome-text">
-
               <h1>
                 Welcome back, Kruthika
                 <span className="wave">👋</span>
@@ -248,9 +192,7 @@ function App() {
               <p>
                 Here's what's happening with your students today.
               </p>
-
             </div>
-
 
             <button
               className="add-student-btn"
@@ -262,25 +204,15 @@ function App() {
               <UserRoundPlus size={19} />
               Add Student
             </button>
-
           </section>
 
-
-          {/* ===================================
-              ERROR MESSAGE
-          =================================== */}
           {error && (
             <div className="app-error">
               {error}
             </div>
           )}
 
-
-          {/* ===================================
-              STAT CARDS
-          =================================== */}
           <section className="stats-grid">
-
             <StatCard
               icon={<Users size={23} />}
               title="Total Students"
@@ -312,39 +244,23 @@ function App() {
               subtitle="↑ Recently added"
               variant="pink"
             />
-
           </section>
 
-
-          {/* ===================================
-              STUDENT DIRECTORY
-          =================================== */}
           <StudentDirectory
             students={students}
             onStudentDeleted={handleStudentDeleted}
             onEditStudent={handleEditStudent}
           />
-
         </main>
 
-
-        {/* =====================================
-            ADD / EDIT STUDENT MODAL
-        ===================================== */}
         {showStudentForm && (
-
           <StudentForm
             onClose={handleCloseForm}
-
             onStudentAdded={handleStudentAdded}
-
             editingStudent={editingStudent}
-
             onStudentUpdated={handleStudentUpdated}
           />
-
         )}
-
       </div>
     </div>
   );

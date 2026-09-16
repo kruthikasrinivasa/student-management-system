@@ -2,6 +2,10 @@ import { useState } from "react";
 import { UserPlus, X } from "lucide-react";
 import axios from "axios";
 
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000/api/students";
+
 function StudentForm({
   onClose,
   onStudentAdded,
@@ -53,7 +57,7 @@ function StudentForm({
           editingStudent.studentId;
 
         const response = await axios.put(
-          `http://localhost:5000/api/students/${id}`,
+          `${API_URL}/${id}`,
           student
         );
 
@@ -62,7 +66,7 @@ function StudentForm({
         }
       } else {
         const response = await axios.post(
-          "http://localhost:5000/api/students",
+          API_URL,
           student
         );
 
