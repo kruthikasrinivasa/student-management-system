@@ -129,3 +129,42 @@ Node.js + Express.js
       │ Mongoose
       ▼
 MongoDB Atlas
+
+
+
+### Project Structure
+student-management-system/
+│
+├── client/
+│   ├── public/
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── StatCard.jsx
+│   │   │   ├── StudentDirectory.jsx
+│   │   │   └── StudentForm.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── server/
+│   ├── models/
+│   │   └── Student.js
+│   │
+│   ├── routes/
+│   │   └── studentRoutes.js
+│   │
+│   ├── .env
+│   ├── server.js
+│   └── package.json
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+
