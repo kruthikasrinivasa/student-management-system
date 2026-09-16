@@ -1,6 +1,6 @@
 
 
-````markdown
+
 # 🎓 Student Management System
 
 A full-stack Student Management System built using the MERN Stack for managing student records through a modern, responsive dashboard.
