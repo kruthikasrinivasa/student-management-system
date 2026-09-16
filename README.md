@@ -571,33 +571,55 @@ The student table also supports horizontal scrolling when required on smaller di
 
 ## 📸 Screenshots
 
-Screenshots can be added to this section to demonstrate the completed application.
+The following screenshots demonstrate the main features and functionality of the Student Management System.
 
-### Dashboard
+### 🏠 Dashboard
 
-_Add dashboard screenshot here._
+The main dashboard provides an overview of student records, statistics, navigation, and the Student Directory.
 
-### Add Student
-
-_Add Add Student form screenshot here._
-
-### Student Directory
-
-_Add Student Directory screenshot here._
-
-### Search and Filtering
-
-_Add search/filter screenshot here._
-
-### Edit Student
-
-_Add Edit Student screenshot here._
-
-### Validation
-
-_Add validation screenshot here._
+![Dashboard](screenshots/01-dashboard.png)
 
 ---
+
+### ➕ Add Student
+
+The Add Student form allows users to enter and save new student information.
+
+![Add Student](screenshots/02-add-student.png)
+
+---
+
+### 👨‍🎓 Student Directory
+
+The Student Directory displays student records along with options to search, filter, edit, and delete records.
+
+![Student Directory](screenshots/03-student-directory.png)
+
+---
+
+### 🔎 Search and Filtering
+
+Students can be searched using Student ID, name, email, or course and filtered by course and academic year.
+
+![Search and Filter](screenshots/04-search-filter.png)
+
+---
+
+### ✏️ Edit Student
+
+The Edit Student form allows users to update existing student information.
+
+![Edit Student](screenshots/05-edit-student.png)
+
+---
+
+### ✅ Validation
+
+The application provides validation for incomplete fields and duplicate Student IDs.
+
+![Validation](screenshots/06-validation.png)
+
+
 
 ## 📚 Learning Outcomes
 
