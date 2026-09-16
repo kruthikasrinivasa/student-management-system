@@ -28,6 +28,22 @@ The project follows a full-stack architecture where the React frontend communica
 
 ---
 
+## 🚀 Live Demo
+
+The Student Management System is deployed and accessible online.
+
+- **Live Application:** https://student-management-system-ijhy.onrender.com
+- **Backend API:** https://student-management-api-qjhd.onrender.com
+
+### Deployment Stack
+- **Frontend:** React + Vite deployed on Render
+- **Backend:** Node.js + Express deployed on Render
+- **Database:** MongoDB Atlas
+- **Source Code:** GitHub
+
+> Note: The application uses a free hosting tier, so the backend may take a short time to wake up after a period of inactivity.
+
+
 ## 🎯 Project Objectives
 
 The main objectives of this project are:
