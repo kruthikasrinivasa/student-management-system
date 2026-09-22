@@ -727,6 +727,21 @@ Dayananda Sagar University
 
 ---
 
+## 📄 Project Documentation
+
+- [Internship Project Report](docs/ATG%20project%20report%20SMS%20FINAL.pdf)
+- [Project Presentation](docs/ATG%20SMS%20project%20PPT%20FINAL.pptx)
+
+## 🚀 Live Demo
+
+[Student Management System – Live Application](https://student-management-system-ijhy.onrender.com)
+
+## 🔗 Project Repository
+
+[GitHub Repository](https://github.com/kruthikasrinivasa/student-management-system)
+
+---
+
 ## 📜 License
 
 This project was developed as an internship mini-project for educational and learning purposes.
